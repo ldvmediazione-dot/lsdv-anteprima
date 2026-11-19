@@ -262,8 +262,7 @@ window.LSDV = {
     { titolo: "Vendemmia tra i filari", testo: "Raccoglitori al lavoro lungo un filare, sopra un muretto a secco.", video: "shared/video/vendemmia.mp4", img: "shared/img/vendemmia-poster.webp" },
     { titolo: "Il grappolo, a mano", testo: "Un raccoglitore stacca i grappoli neri dal tronco nodoso di una vite.", video: "shared/video/vendemmia-mani.mp4", img: "shared/img/vendemmia-mani-poster.webp" },
     { titolo: "Vigneto in luce dorata", testo: "Una distesa di vigne autunnali su un pendio, con il sole basso.", video: "shared/video/vendemmia-tramonto.mp4", img: "shared/img/vendemmia-tramonto-poster.webp" },
-    { titolo: "Filare in controluce", testo: "Grappoli scuri appesi sopra un viale d'erba, con una scala di legno a lato.", video: "shared/video/sclavia-timelapse.mp4", img: "shared/img/sclavia-timelapse-poster.webp" },
-    { titolo: "In fondo al filare", testo: "Una figura in lontananza, in fondo al viale tra le viti.", video: "shared/video/vigna.mp4", img: "shared/img/video-poster.webp" }
+    { titolo: "Filare in controluce", testo: "Grappoli scuri appesi sopra un viale d'erba, con una scala di legno a lato.", video: "shared/video/sclavia-timelapse.mp4", img: "shared/img/sclavia-timelapse-poster.webp" }
   ],
 
   adesione: {
