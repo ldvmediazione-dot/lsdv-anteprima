@@ -1,0 +1,14 @@
+{
+ "name": "Strada del Vino Casavecchia di Pontelatone",
+ "short_name": "Strada del Vino",
+ "lang": "it",
+ "start_url": "/lsdv-anteprima/",
+ "display": "browser",
+ "background_color": "#FCF6E1",
+ "theme_color": "#442413",
+ "icons": [
+  {"src": "/lsdv-anteprima/shared/icona-192.png", "sizes": "192x192", "type": "image/png"},
+  {"src": "/lsdv-anteprima/shared/icona-512.png", "sizes": "512x512", "type": "image/png"},
+  {"src": "/lsdv-anteprima/shared/pittogramma.svg", "sizes": "any", "type": "image/svg+xml"}
+ ]
+}

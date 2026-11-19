@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Strada del Vino//Eventi//IT
+BEGIN:VEVENT
+UID:anteprima-2027@stradadelvino
+DTSTAMP:20261119T000000Z
+DTSTART;VALUE=DATE:20270122
+DTEND;VALUE=DATE:20270124
+SUMMARY:Anteprima 2027 · Pallagrello e Casavecchia
+LOCATION:Archivio di Stato di Caserta · Reggia di Caserta
+URL:https://ldvmediazione-dot.github.io/lsdv-anteprima/eventi/anteprima-2027/
+END:VEVENT
+END:VCALENDAR

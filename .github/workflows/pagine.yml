@@ -1,0 +1,57 @@
+name: Anteprima
+# Pubblica sito/ su GitHub Pages. Dopo SCADENZA pubblica solo la pagina "anteprima scaduta" e si spegne.
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+env:
+  SCADENZA: "2026-11-21T23:05:00Z"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  pubblica:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: stato
+        run: |
+          if [ "$(date -u +%s)" -ge "$(date -u -d "$SCADENZA" +%s)" ]; then echo "scaduta=1" >> "$GITHUB_OUTPUT"; fi
+      - name: Prima della scadenza le esecuzioni orarie non fanno nulla
+        if: github.event_name == 'schedule' && steps.stato.outputs.scaduta != '1'
+        run: echo "ancora valida fino a $SCADENZA"
+      - name: Pagina di anteprima scaduta
+        if: steps.stato.outputs.scaduta == '1'
+        run: |
+          rm -rf sito && mkdir sito
+          printf '%s\n' '<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Anteprima scaduta</title></head>' \
+            '<body style="margin:0;min-height:100vh;display:grid;place-items:center;background:#FCF6E1;color:#442413;font:18px/1.5 system-ui,sans-serif;text-align:center;padding:24px"><p>Questa anteprima non è più disponibile.</p></body></html>' > sito/index.html
+          cp sito/index.html sito/404.html
+      - uses: actions/configure-pages@v5
+        if: github.event_name != 'schedule' || steps.stato.outputs.scaduta == '1'
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'schedule' || steps.stato.outputs.scaduta == '1'
+        with:
+          path: sito
+      - id: deploy
+        uses: actions/deploy-pages@v4
+        if: github.event_name != 'schedule' || steps.stato.outputs.scaduta == '1'
+      - name: Spegne le esecuzioni orarie
+        if: steps.stato.outputs.scaduta == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow disable "Anteprima" -R "$GITHUB_REPOSITORY"

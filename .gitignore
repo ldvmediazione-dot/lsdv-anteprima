@@ -1,0 +1,6 @@
+*.env
+config.php
+*.sqlite
+node_modules/
+*.log
+*.zip
