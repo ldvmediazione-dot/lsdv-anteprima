@@ -18,7 +18,7 @@ const DISPARI = [1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 2, 4, 18, 20, 11, 3, 6, 8, 1
 const OMOCODIA = "LMNPQRSTUV"; // lettere che sostituiscono le cifre 0-9 nei codici omocodici
 const MESI = "ABCDEHLMPRST";
 const RE_CF = /^[A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$/;
-const RE_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const RE_EMAIL = /^[^\s@<>()[\],;:"']+@[^\s@<>()[\],;:"']+\.[^\s@<>()[\],;:"']{2,}$/; // niente caratteri da intestazioni o HTML
 
 export function cfValido(cf) {
   if (!RE_CF.test(cf)) return false;

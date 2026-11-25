@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  SCADENZA: "2026-11-21T23:05:00Z"
+  SCADENZA: "2026-11-26T16:59:00Z"
 
 permissions:
   contents: read

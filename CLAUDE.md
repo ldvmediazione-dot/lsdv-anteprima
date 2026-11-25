@@ -1,7 +1,7 @@
 # LSDV anteprima (GitHub Pages, temporanea)
 
 Copia statica del sito `ldvmediazione-dot/lsdv-sito` (cartella `sito/`), pubblicata su
-https://ldvmediazione-dot.github.io/lsdv-anteprima/ per 49 ore. Repo pubblico: serve al piano gratuito di Pages.
+https://ldvmediazione-dot.github.io/lsdv-anteprima/ a tempo (scadenza in pagine.yml). Repo pubblico: serve al piano gratuito di Pages.
 
 - Niente PHP: moduli, newsletter e area riservata non funzionano (avviso fisso in fondo alle pagine).
 - Tutte le pagine hanno `noindex, nofollow` e robots.txt blocca tutto.
